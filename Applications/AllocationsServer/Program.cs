@@ -19,7 +19,8 @@ namespace AllocationsServer
             WebHost.CreateDefaultBuilder(args)
                 // https://github.com/aspnet/KestrelHttpServer/issues/1998#issuecomment-322922164
                 .UseConfiguration(new ConfigurationBuilder().AddCommandLine(args).Build())
-                .AddCloudFoundry()
+                 .UseCloudFoundryHosting()
+                 .AddCloudFoundry()
                 .UseStartup<Startup>();
     }
 }
